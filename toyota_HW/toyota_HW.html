@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .toyota{
+            position: relative;
+            width: 960px;
+            margin:10px auto;         
+            /* padding-top: 96px; */       
+            /* gap: 10%;    */
+        }
+        /* 奇數 */
+        .toyota_odd{                   
+            margin-bottom: 250px;
+            /* padding-bottom: 250px;                */
+        }
+        .toyota_odd .back_block{
+            background-color: #eeeeee;
+            opacity: 0.6;
+            display: flex;
+            position:relative;
+            width: 470px;
+            top: 30px;
+            padding-top: 290px;
+            left:490px;   
+            
+            /* transition: 1s;
+            opacity: 0;            
+            transform: translateX(20%);     */
+        }
+        /* .back_block 效果 */
+        /* .toyota_odd:hover .back_block{
+            opacity:0.6;
+            transform: translateX(0%);   
+        } */
+        .toyota_odd .pic{
+            position: relative;
+            top:0;
+
+            /* transition: 1s;
+            opacity: 0;            
+            transform: translateX(20%);          */
+        }
+        /* pic 效果 */
+        /* .toyota_odd:hover .pic{
+            z-index: 1;
+            opacity:1;
+            transform: translateX(0%);      
+        } */
+
+        .toyota_odd .pic a img{           
+            width: 672px;
+            position: absolute;
+            margin-top:116px;
+            left: 160px;
+            z-index: 1;
+        }
+        /* .toyota_odd .pic a span img{
+            width: 60px;            
+            position: absolute;
+            left: 780px;
+            margin-top:330px;
+            z-index: 2;
+        } */
+        .toyota_odd .pic a .video_play{
+            display: block;
+            background-color: #bb0404;
+            width: 60px;            
+            position: absolute;
+            left: 780px;
+            margin-top:330px;
+            z-index: 3;
+        }
+        .toyota_odd .pic a .video_play::before {
+            content: '';                     
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 20px solid #fff;
+            margin-left: 22px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .toyota_odd .txt_header{
+            display: flex;
+            flex-wrap: wrap;
+            width: 320px;
+            position: absolute;           
+            z-index: 2;
+
+            /* transition: 1s;
+            opacity: 0;            
+            transform: translateX(-20%);             */
+        }       
+        /* txt_header 效果 */
+        /* .toyota_odd:hover .txt_header{
+            opacity: 1;
+            transform: translateX(0%);
+        } */
+        .toyota_odd .txt_header .title{
+            width: 100%;
+            background-color: #bb0404;
+            display: flex;                     
+            align-items: center;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        /* .toyota_odd .number{
+            writing-mode: vertical-lr;
+            font-size: 100px;            
+            margin: 10px 0;
+            line-height:0.9;                 
+        } */
+        .toyota_odd .txt_header h2{
+            color:#ffffff;
+            opacity: 0.9;
+            font-weight:lighter;     
+            
+            writing-mode: vertical-lr;
+            font-size: 100px;            
+            margin: 10px 0;
+            line-height:0.9;  
+        }       
+        .toyota_odd .txt_header p{
+            color:#ffffff;
+            opacity: 0.9;
+            font-weight:lighter;  
+            font-size: 50px;    
+        }
+        .toyota_odd .txt_header .content{
+            background-color: #000000;    
+            color: #eeeeee;        
+            width: 100%;
+            line-height: 2;
+            letter-spacing:2px ;
+
+            /* display: flex;
+            flex-direction: column; */          
+        }
+        .toyota_odd .txt_header .content h3{
+            opacity: 0.9;
+            margin:20px 10px 0 10px;
+            font-size: 22px;            
+        }
+        .toyota_odd .txt_header .content p{
+            opacity: 0.8;
+            /* margin-top: auto; */
+            margin:0 10px 16px 10px;
+            font-size: 19px;
+        }
+        .toyota_odd .txt_footer{
+            width: 638px;
+            background-color: #eeeeee;
+            position: relative;
+            
+            z-index: 1;
+            margin: 10px 0 10px 40px;           
+            top: 200px;
+            padding:20px;
+            
+            /* transition: 1s;
+            opacity: 0;            
+            transform: translateY(20%);  */
+        }
+        /* txt_footer 效果 */
+        /* .toyota_odd:hover .txt_footer{
+            opacity: 1;
+            transform: translateY(0%);
+        } */
+        .toyota_odd .txt_footer_title{
+           
+            display:flex;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .toyota_odd .txt_footer_title h3{
+            color: #bb0404;
+        }   
+        /* 調橫線 */
+        .toyota_odd .txt_footer_title h3::after{
+            border: 1px solid  #bb0404;            
+            content: "";
+            width: 410px;
+            display: inline-block;
+            margin: 0 0 8px 10px;
+        } 
+        /* 用div 搭配grow橫線 */
+        .toyota_odd .txt_footer_title_border{
+            
+            border-top: 1px solid #bb0404;
+           flex-grow: 1;
+           margin-top: 12px;
+           margin-left:5px;
+            
+            
+        }      
+        .toyota_odd .txt_footer_list_title{
+            list-style-type:none;
+            display: inline;
+            background-color: #000000;   
+            color: #ffffff;
+            padding: 4px;
+            margin: 10px 0;
+            border-radius:2px;
+            font-size: 18px;
+            
+        }     
+        .toyota_odd .txt_footer_list_content{           
+            list-style-type: none;
+            margin:10px 8px 10px 10px;
+            font-size: 16px;
+            color:#6d6d6d;
+            display: flex;
+        }
+        .toyota_odd .txt_footer_list_content::before{
+            /* list-style-type: square; */
+            content: "■";           
+            color:#bb0404;
+            margin-top: 4px;
+            margin-right: 4px;
+            font-size: 10px;                           
+        }
+
+        .toyota_even:hover .toyota_even{
+            opacity: 1;
+        }
+        
+        /* 偶數 */
+        .toyota_even{          
+            padding-top: 30px;         
+            margin-bottom: 150px;               
+        }
+        .toyota_even .back_block{
+            background-color: #eeeeee;
+            opacity: 0.6;
+            display: block;
+            position:relative;
+            width: 537px;
+            margin-top: 30px;
+            padding-top: 330px;
+            padding-bottom: 100px;
+            left:260px;    
+            
+            /* opacity: 0;
+            transition: 2s;
+            transform:translateY(-10%); */
+        }
+        /* .toyota_even .back_block效果 */
+        /* .toyota_even:hover .back_block{
+            opacity: 0.6;
+            transform:translateY(0%);
+        } */
+        
+        .toyota_even .pic{
+            position: relative;
+            top:0;
+
+            /* transition: 1s;
+            opacity: 0;            
+            transform: translateX(-20%);          */
+        }
+        /* pic 效果 */
+        /* .toyota_even:hover .pic{
+            z-index: 1;
+            opacity:1;
+            transform: translateX(0%);      
+        } */
+        .toyota_even .pic a img{           
+            width: 672px;
+            position: absolute;
+            /* top:110px; */
+            margin-top: 124px;
+            left: 10px;
+            z-index: 1;
+        }
+        /* .toyota_even .pic a span img{
+            width: 60px;            
+            position: absolute;
+            left: 0px;
+            margin-top:330px;
+            z-index: 2;
+        } */
+
+        .toyota_even .pic a .video_play{
+            display: block;
+            background-color: #bb0404;
+            width: 60px;            
+            position: absolute;
+            left: 0px;
+            margin-top:330px;
+            z-index: 2;
+            
+        }
+        .toyota_even .pic a .video_play::before {
+            content: '';                     
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 20px solid #fff;
+            margin-left: 22px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .toyota_even .txt_header{
+            display: flex;
+            flex-wrap: wrap;
+            width: 320px;
+            position: absolute;            
+            left:640px;            
+            z-index: 2;   
+            
+            /* opacity: 0;
+            transition: 1s;
+            transform: translateX(20%); */
+        }       
+        /* .toyota_even:hover .txt_header{
+            opacity: 1;
+            transform: translateX(0%);
+        } */
+
+        .toyota_even .txt_header .title{
+            width: 320px;
+            background-color: #bb0404;
+            display: flex;                    
+            align-items: center;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;                        
+        }
+        /* .toyota_even .number{
+            writing-mode: vertical-lr;
+            font-size: 100px;            
+            margin: 10px 0;
+            line-height:0.9;   
+        } */
+        .toyota_even .txt_header h2{
+            color:#ffffff;
+            opacity: 0.9;
+            font-weight:lighter;
+            position: relative;
+            left:18px; 
+            margin-left: 10px;     
+            
+            writing-mode: vertical-lr;
+            /* transform: rotate(90deg); */
+            font-size: 100px;            
+            margin: 10px 0;
+            line-height:0.9; 
+        }
+        .toyota_even .txt_header p{
+            color:#ffffff;
+            opacity: 0.9;
+            font-weight:lighter;  
+            font-size: 50px;    
+            margin-left: 10px;
+        }
+        .toyota_even .txt_header .content{
+            background-color: #000000;    
+            color: #eeeeee;        
+            width: 100%;
+            line-height: 2;
+            letter-spacing:2px ;
+
+            /* display: flex;
+            flex-direction: column; */
+          
+        }
+        .toyota_even .txt_header .content h3{
+            opacity: 0.9;
+            margin:10px 10px 0 10px;
+            font-size: 22px;
+        }
+        .toyota_even .txt_header .content p{
+            opacity: 0.8;
+            /* margin-top: auto; */
+            margin:0 10px 20px 10px;
+            font-size: 19px;
+        }
+        .toyota_even  .txt_footer{
+            width: 638px;
+            background-color: #eeeeee;
+            position: relative;            
+            z-index: 1;
+            margin: 10px 0;           
+            top: 50px;
+            left:282px ;           
+            padding:20px;
+
+            /* opacity: 0;
+            transition: 1s;
+            transform: translateY(20%); */
+}
+         /* txt_footer 效果 */
+        /* .toyota_even:hover .txt_footer{
+            opacity: 1;
+            transform: translateY(0%);
+        } */
+
+        .toyota_even .txt_footer_title{
+           
+            display:flex;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .toyota_even .txt_footer_title h3{
+            color: #bb0404;
+        }
+
+         /* 調橫線 */
+         .toyota_even .txt_footer_title h3::after{
+            border: 1px solid  #bb0404;            
+            content: "";
+            width: 410px;
+            display: inline-block;
+            margin: 0 0 8px 10px;
+        } 
+
+        /* 用div 搭配grow橫線 */
+        .toyota_even .txt_footer_title_border{            
+            border-top: 1px solid #bb0404;
+            flex-grow: 1;
+            margin-top: 12px;
+            margin-left:5px;                    
+        }      
+       
+        .toyota_even .txt_footer_list_title{
+            list-style-type:none;
+            display: inline;
+            background-color: #000000;   
+            color: #ffffff;
+            padding: 4px;
+            margin: 10px 0;
+            border-radius:2px;
+            font-size: 18px;            
+        }     
+        .toyota_even .txt_footer_list_content{           
+            list-style-type: none;
+            margin:10px 8px 10px 10px;
+            font-size: 16px;
+            color:#6d6d6d;
+            display: flex;
+        }
+        .toyota_even .txt_footer_list_content::before{
+            /* list-style-type: square; */
+            content: "■";           
+            color:#bb0404;
+            margin-top: 4px;
+            margin-right: 4px;
+            font-size: 10px;                           
+        }
+
+
+    </style>
+</head>
+<body>
+    
+  <div class="toyota">
+      <div class="toyota_odd">
+        <div class="txt_header">
+            <div class="title">
+                <h2 class="number">01</h2>
+                <p>操控樂趣</p>
+            </div>
+            <div class="content">
+                <h3>人人滿意的駕駛體驗</h3>
+                <p>透過最佳重量分配，實現平順起步、直線穩定加速，過彎同時保持車身平穩，帶給駕駛更靈敏的道路反饋，享受隨心馳騁的行駛快感。</p>
+            </div>
+        </div>
+        <div class="pic">
+            <a href="https://www.youtube.com/watch?v=WH9kmoDw0fI&t=46s">
+            <img src="img/01.png" alt="">
+                <span class="video_play"></span>
+            <!-- <span ><img src="img/YT.PNG" alt=""></span> -->
+            </a>
+
+        </div>
+        <div class="back_block"></div>
+        
+        <div class="txt_footer">
+            <div class="txt_footer_title">
+                <div class="txt_footer_title_txt">
+                    <h3>因為我們做了這些革新</h3>
+                </div>
+                <!-- <div class="txt_footer_title_border">
+                    
+                </div>                 -->
+            </div>
+            <div class="txt_footer_list">
+                <ul>
+                    <li class="txt_footer_list_title">低重心設計</li>
+                    <ul><li class="txt_footer_list_content">透過低重心設計，不僅呈現更低伏的外觀，更能減少車身側傾，保持高速行駛穩定性。</li>
+                    </ul>
+                    <li class="txt_footer_list_title">車體剛性強化</li>
+                    <ul>
+                        <li class="txt_footer_list_content">車身結構採用超高強度材料，提高車輛穩定性，同時藉由雷射強化焊接技術，大幅增加焊點數量，提升車身抗扭剛性，強化駕馭穩定性及安全性。</li>
+                    </ul>
+                    <li class="txt_footer_list_title">四輪獨立懸吊</li>
+                    <ul>
+                        <li class="txt_footer_list_content">搭載全新四輪獨立懸吊設定，透過懸吊的高承載強度，保持輪胎抓地力，同時兼顧轉向靈敏度與清晰路感回饋，提升駕馭樂趣。</li>
+                    </ul>                                   
+                </ul>
+            </div>
+            
+        </div>      
+      </div>
+
+      <div class="toyota_even">
+        <div class="txt_header">
+            <div class="title">
+                <p>安全守護<p>
+                <h2 class="number">02</h2>
+            </div>
+            <div class="content">
+                <h3>行車更安心的高剛性車體</h3>
+                <p>您的愛車會妥善保護您，強悍穩固的車身可使您安全無虞。世界級的安全功能讓您輕鬆自如享受旅程、毫無後顧之憂。</p>
+            </div>
+        </div>
+        <div class="pic">
+            <a href="https://www.youtube.com/watch?v=A9-cReYqtnM">
+            <img src="img/02.png" alt="">
+            <span class="video_play"></span>
+            <!-- <span><img src="img/YT.PNG" alt=""></span> -->
+            </a>
+        </div>
+        <div class="back_block"></div>
+        
+        <div class="txt_footer">
+            <div class="txt_footer_title">
+                <div class="txt_footer_title_txt">
+                    <h3>因為我們做了這些革新</h3>
+                </div>
+                <!-- <div class="txt_footer_title_border">
+                    
+                </div>                 -->
+            </div>
+            <div class="txt_footer_list">
+                <ul>
+                    <li class="txt_footer_list_title">主動安全</li>
+                    <ul><li class="txt_footer_list_content">以先進的TSS系統主動偵測路況，輔助駕駛判斷路況並維持行車安全。</li>
+                    </ul>
+                    <li class="txt_footer_list_title">被動安全</li>
+                    <ul>
+                        <li class="txt_footer_list_content">堅固的高剛性車體，使用熱沖壓成材料的高強度抗扭鋼板，強化座艙對意外事故的保護力。</li>
+                    </ul>
+                    
+                    </ul>                
+                </ul>
+            </div>            
+        </div>      
+      </div>
+
+      <div class="toyota_odd">
+        <div class="txt_header">
+            <div class="title">
+                <h2 class="number">03</h2>
+                <p>乘坐舒適</p>
+            </div>
+            <div class="content">
+                <h3>令人放鬆舒適的車室空間</h3>
+                <p>車室空間設計著重人體工學，透過方向盤、踏板等位置優化，追求更舒適的駕駛位置，並以新型座椅設計，提高座椅包覆性，致力實現長途駕駛不疲勞的舒適駕馭體驗。</p>
+            </div>
+        </div>
+        <div class="pic">
+            <a href="https://www.youtube.com/watch?v=SMNtG6-gS2M&t=46s">
+            <img src="img/03.png" alt="">
+            <span class="video_play"></span>
+            <!-- <span><img src="img/YT.PNG" alt=""></span> -->
+            </a>
+        </div>
+        <div class="back_block"></div>
+       
+        <div class="txt_footer">
+            <div class="txt_footer_title">
+                <div class="txt_footer_title_txt">
+                    <h3>因為我們做了這些革新</h3>
+                </div>
+                <!-- <div class="txt_footer_title_border">
+                    
+                </div>                 -->
+            </div>
+            <div class="txt_footer_list">
+                <ul>
+                    <li class="txt_footer_list_title">駕駛位置最佳化</li>
+                    <ul><li class="txt_footer_list_content">針對駕駛位置進行徹底的修改，讓駕馭者可如同握手般自然且舒適地操控方向盤。</li>
+                    </ul>
+                    <li class="txt_footer_list_title">駕馭視野佳</li>
+                    <ul>
+                        <li class="txt_footer_list_content">考量駕駛坐進車內的高度，透過前擋風玻璃位置的調整，達到盲區極小化，使駕駛視野更開闊，同步提升駕馭安全。</li>
+                    </ul>
+                    <li class="txt_footer_list_title">更寧靜的車室</li>
+                    <ul>
+                        <li class="txt_footer_list_content">採用最新三層結構的隔音材料，與引擎、變速箱的零件改革，將座艙的震動抑制在最小限度，提供乘客舒適安靜的感受。</li>
+                    </ul>
+                
+                </ul>
+            </div>
+            
+        </div>
+      
+      </div>
+
+      <div class="toyota_even">
+        <div class="txt_header">
+            <div class="title">
+                <p>以人為本</p>
+                <h2 class="number">04</h2>
+            </div>
+            <div class="content">
+                <h3>使用者導向的貼心設計</h3>
+                <p>藉由高度人性化的介面整合，傳遞車輛資訊，豐富日常駕駛體驗。從提升油耗表現到行李廂空間最適化，均細心考量，更加貼近使用者真正所需與習慣，並給予即時回應</p>
+            </div>
+        </div>
+        <div class="pic">
+            <a href="https://www.youtube.com/watch?v=MniLwJEoNgg&t=46s">
+            <img src="img/04.png" alt="">
+            <span class="video_play"></span>
+            <!-- <span><img src="img/YT.PNG" alt=""></span> -->
+            </a>
+        </div>
+        <div class="back_block"></div>
+      
+        <div class="txt_footer">
+            <div class="txt_footer_title">
+                <div class="txt_footer_title_txt">
+                    <h3>因為我們做了這些革新</h3>
+                </div>
+                <!-- <div class="txt_footer_title_border">
+                    
+                </div>                 -->
+            </div>
+            <div class="txt_footer_list">
+                <ul>
+                    <li class="txt_footer_list_title">優異油耗表現</li>
+                    <ul><li class="txt_footer_list_content">以Corolla Sport為例，更強勁的高效引擎將熱效率提升40%，達到世界級水準，屢屢突破燃油效率新境界</li>
+                    </ul>
+                    <li class="txt_footer_list_title">行李箱空間最適化</li>
+                    <ul>
+                        <li class="txt_footer_list_content">以第四代Prius為例，透過將電池位置移到後座下方，讓行李箱擁有更大的空間。</li>
+                    </ul>
+                    
+                    </ul>                
+                </ul>
+            </div>            
+        </div>      
+      </div>
+
+      <div class="toyota_odd">
+        <div class="txt_header">
+            <div class="title">
+                <h2 class="number">05</h2>
+                <p>引以為傲</p>
+            </div>
+            <div class="content">
+                <h3>極具吸引力的精心設計</h3>
+                <p>TNGA車款擁有讓人忍不住回頭的新潮外觀、讓駕駛充滿自信的駕馭快感！不僅讓車主能展現個人風格，也能讓擁有者都能引以為傲。</p>
+            </div>
+        </div>
+        <div class="pic">
+            <a href="https://www.youtube.com/watch?v=eqFHWdDMXc0&t=46s">
+            <img src="img/05.png" alt="">
+            <span class="video_play"></span>
+            <!-- <span><img src="img/YT.PNG" alt=""></span> -->
+            </a>
+        </div>
+        <div class="back_block"></div>
+       
+        <div class="txt_footer">
+            <div class="txt_footer_title">
+                <div class="txt_footer_title_txt">
+                    <h3>因為我們做了這些革新</h3>
+                </div>
+                <!-- <div class="txt_footer_title_border">
+                    
+                </div>                 -->
+            </div>
+            <div class="txt_footer_list">
+                <ul>
+                    <li class="txt_footer_list_title">設計概念</li>
+                    <ul><li class="txt_footer_list_content">TNGA低重心設計，不僅呈現更低伏的運動化外觀，更講究高品質內裝的一致性。</li>
+                    </ul>
+                    <li class="txt_footer_list_title">環保概念</li>
+                    <ul>
+                        <li class="txt_footer_list_content">為了對環境保護盡一份心力，我們全面提升傳統引擎、變速箱與油電複合動力的動力效能。</li>
+                    </ul>                                   
+                </ul>
+            </div>
+            
+        </div>      
+    </div>
+</div>
+</body>
+</html>

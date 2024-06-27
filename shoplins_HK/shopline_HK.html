@@ -6,21 +6,21 @@
 
     <title>Document</title>
     <link href="http://mozilla.github.io/foundation-icons/assets/foundation-icons.css" type="text/css" rel="stylesheet">
-    <link rel="stylesheet" href="grid.css">
+    
     <style>
         *{
             margin: 0;
             padding: 0;
         }
-        .container{
-            /* width: 100%; */
+        .contain{
+            width: 100%;
             line-height: 1.5;
         }
         .wrap1{
             background-color: #F7F8F9;
             text-align: center;
             margin-bottom: 64px;
-            padding: 64px 0 64px 0;            
+            padding: 64px 0 64px 0;
         }
         .wrap1 h2{
             text-align: center;
@@ -28,27 +28,31 @@
             margin-bottom: 24px;
         }
         .wrap2{
-            justify-content: center;                       
-            margin: 64px 0 64px 0;                   
+            justify-content: center;
+                       
+            margin: 64px 0 64px 0;
+           
+        
         }
         .wrap2 .card:nth-child(2n){
             flex-direction: row-reverse;
         }
-        .wrap2 .card_list{
-       
-        }
         .wrap2 .card{
-            justify-content: center;           
+            justify-content: center;
+            /* justify-content:space-around; */
             display: flex;           
-            margin-top: 80px;           
+            margin-top: 80px;
+            width: 100%;
+            height: 100%;
             flex-wrap: wrap;
 
         }
         .wrap2 .card .space{
-            /* width:60px ; */
+            width:60px ;
         }
-        .wrap2 .card .txt{         
-            margin-bottom: 50px;
+        .wrap2 .card .txt{
+            width: 510px;  
+            /* margin:0 20px ;             */
         }
         .wrap2 .card h3{
             margin-bottom: 24px;
@@ -62,28 +66,35 @@
             display: flex;            
             flex-wrap: wrap;                      
             margin-bottom: 40px;
-            justify-content: space-between;         
+            justify-content: space-between;
         }
-        .wrap2 .txt li{            
-            font-size: 16px;         
+        .wrap2 li{
+            
+            font-size: 16px;
+            width: 225px;
             margin:  0 0 8px;
-          
+            margin-left: 20px;                      
         }      
-        .wrap2 .txt li::marker
-        {                     
+        .wrap2 li::marker
+        {           
+
+           
             color: #0061FF;
         }
         .wrap2 .card a{
-            text-decoration: none;                  
+            text-decoration: none;
+            
+            /* margin-top: 40px; */
          
         }
         .wrap2 .card a span{
             text-decoration: none;
             color: #0061FF;
-            border-bottom: 2px solid #0061FF;      
+            border-bottom: 2px solid #0061FF;
+            /* margin-top: 40px; */           
         }
         .wrap2 .card .pic{
-            /* width: 510px; */
+            width: 510px;
         }
         .wrap2 .card .pic img{
             width: 90%;           
@@ -115,7 +126,7 @@
             opacity:1;
             /* transition: opacity 1s; */
         }     
-        .item_list{
+        .item-list{
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -123,8 +134,8 @@
             
         }
         .item{
-            /* width: 335px; */
-            /* margin: 58px 0 0 32px; */
+            width: 335px;
+            margin: 58px 0 0 32px;
         }
         .item h5{
             font-size: 22px;
@@ -134,145 +145,143 @@
 </head>
 <body>
     
-<div class="container">
-    <div class="wrap1 col-12">        
+<div class="contain">
+    <div class="wrap1">        
          <h2>單一平台就能助你<br>在全通路輕鬆開店創業</h2>
         
         <p>從網路商店架站到實體門市管理，只需要一個平台，就能輕鬆實現開店創業，並能同步管理所有銷售管道，SHOPLINE 助你賣得更多、賣得更好！</p>
     </div>
     <div class="wrap2">
-        <div class="card_list">
-            <div class="card col-12">
-                <div class="txt col-12 col-md-6">
-                    <h3>免寫程式、多款版型<br>
-                        輕鬆打造全能電商網站</h3>
-                    <p>不會寫程式也能輕鬆架設品牌電商官網！任何產業都能找到合適的專業設計版型，以滑鼠拖曳就能完成網頁編輯，讓架設網站就像堆積木一樣簡單。</p>
-                    <ul class="col-12">
-                        <li class="col-12 col-md-6">豐富版型主題與字型搭配</li>
-                        <li class="col-12 col-md-6">SEO 搜尋引擎優化</li>
-                        <li class="col-12 col-md-6">RWD 響應式網頁設計</li>
-                        <li class="col-12 col-md-6">一頁商店</li>
-                        <li class="col-12 col-md-6">獨有網址 ＆ SSL 安全憑證</li>
-                        <li class="col-12 col-md-6">開放 HTML／CSS 編輯</li>
-                    </ul>
-                    <a href="https://shopline.tw/online-store-setup"><span>看看開店祕技</span> <i class="icon-arrow-right"> <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#0061FF"><path d="M630-444H192v-72h438L429-717l51-51 288 288-288 288-51-51 201-201Z"/></svg></i></a>
-                </div>
-                <!-- <div class="space"></div> -->
-                <div class="pic col-12 col-md-6">
-                    <img src="imgs-HK/01.webp" alt="">
-                </div>
+        <div class="card">
+            <div class="txt">
+                <h3>免寫程式、多款版型<br>
+                    輕鬆打造全能電商網站</h3>
+                <p>不會寫程式也能輕鬆架設品牌電商官網！任何產業都能找到合適的專業設計版型，以滑鼠拖曳就能完成網頁編輯，讓架設網站就像堆積木一樣簡單。</p>
+                <ul>
+                    <li>豐富版型主題與字型搭配</li>
+                    <li>SEO 搜尋引擎優化</li>
+                    <li>RWD 響應式網頁設計</li>
+                    <li>一頁商店</li>
+                    <li>獨有網址 ＆ SSL 安全憑證</li>
+                    <li>開放 HTML／CSS 編輯</li>
+                </ul>
+                <a href="https://shopline.tw/online-store-setup"><span>看看開店祕技</span> <i class="icon-arrow-right"> <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#0061FF"><path d="M630-444H192v-72h438L429-717l51-51 288 288-288 288-51-51 201-201Z"/></svg></i></a>
             </div>
-            <div class="card col-12">
-                <div class="txt col-12 col-md-6">
-                    <h3>支持海內外電商<br>
-                        金流、物流一次搞定</h3>
-                    <p>支持在地及國際金流、物流串接服務，提供海內外顧客最便利的付款及送貨服務，加速消費者完成下單交易，大幅降低購物車放棄率！</p>
-                    <ul class="col-12">
-                        <li class="col-12 col-md-6">線上／線下信用卡刷卡</li>
-                        <li class="col-12 col-md-6">多溫層宅配並指定運費</li>
-                        <li class="col-12 col-md-6">第三方金流／行動支付整合</li>
-                        <li class="col-12 col-md-6">超商／宅配貨到付款</li>
-                        <li class="col-12 col-md-6">超商代碼／條碼繳費</li>
-                        <li class="col-12 col-md-6">發票開立與串接</li>
-                    </ul>
-                    <a href="https://shopline.tw/online-store/features#payments-and-shipping"><span>了解更多金物流</span> <i class="icon-arrow-right"> <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#0061FF"><path d="M630-444H192v-72h438L429-717l51-51 288 288-288 288-51-51 201-201Z"/></svg></i></a>
-                </div>
-                <!-- <div class="space"></div> -->
-                <div class="pic col-12 col-md-6">
-                    <img src="imgs-HK/02.webp" alt="">
-                </div>
+            <div class="space"></div>
+            <div class="pic">
+                <img src="imgs-HK/01.webp" alt="">
             </div>
-            <div class="card col-12 ">
-                <div class="txt col-12 col-md-6">
-                    <h3>刺激下單，創造回購<br>
-                        行銷導流、促購模組任你玩</h3>
-                    <p>多元優惠活動、會員集客機制、網紅分潤等多種優惠促銷，將電商行銷玩法一網打盡；加上廣告追蹤助你有效優化行銷活動，刺激顧客下單、吸引鐵粉回購！</p>
-                    <ul class="col-12">
-                        <li class="col-12 col-md-6">推薦活動與分潤</li>
-                        <li class="col-12 col-md-6">買Ｘ享Ｙ優惠</li>
-                        <li class="col-12 col-md-6">A+B 優惠活動</li>
-                        <li class="col-12 col-md-6">會員推薦獎賞</li>
-                        <li class="col-12 col-md-6">會員分級／點數／購物金</li>
-                        <li class="col-12 col-md-6">FB／Google／LINE 廣告追蹤</li>
-                    </ul>
-                    <a href="https://shopline.tw/online-store/features#promotion"><span>看更多優惠模組</span> <i class="icon-arrow-right"> <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#0061FF"><path d="M630-444H192v-72h438L429-717l51-51 288 288-288 288-51-51 201-201Z"/></svg></i></a>
-                </div>
-                <!-- <div class="space"></div> -->
-                <div class="pic col-12 col-md-6">
-                    <img src="imgs-HK/03.webp" alt="">
-                </div>
+        </div>
+        <div class="card">
+            <div class="txt">
+                <h3>支持海內外電商<br>
+                    金流、物流一次搞定</h3>
+                <p>支持在地及國際金流、物流串接服務，提供海內外顧客最便利的付款及送貨服務，加速消費者完成下單交易，大幅降低購物車放棄率！</p>
+                <ul>
+                    <li>線上／線下信用卡刷卡</li>
+                    <li>多溫層宅配並指定運費</li>
+                    <li>第三方金流／行動支付整合</li>
+                    <li>超商／宅配貨到付款</li>
+                    <li>超商代碼／條碼繳費</li>
+                    <li>發票開立與串接</li>
+                </ul>
+                <a href="https://shopline.tw/online-store/features#payments-and-shipping"><span>了解更多金物流</span> <i class="icon-arrow-right"> <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#0061FF"><path d="M630-444H192v-72h438L429-717l51-51 288 288-288 288-51-51 201-201Z"/></svg></i></a>                
             </div>
-            <div class="card col-12">
-                <div class="txt col-12 col-md-6">
-                    <h3>「社群+電商」輕鬆開賣<br>
-                        打造一致的社群購物體驗</h3>
-                    <p>善用社群與顧客頻繁互動，讓你透過社群也能輕鬆開賣！從直播 +1 接單、聊天機器人到各管道的訊息整合，我們都為你準備好了，不放過每個銷售環節，打造全方位的社群購物體驗！</p>
-                    <ul class="col-12">
-                        <li class="col-12 col-md-6">社群直播購物系統</li>
-                        <li class="col-12 col-md-6">FB／IG／LINE 直播 +1</li>
-                        <li class="col-12 col-md-6">FB & IG 貼文 +1</li>
-                        <li class="col-12 col-md-6">FB／IG／LINE 對話式購物</li>
-                        <li class="col-12 col-md-6">自訂聊天機器人腳本</li>
-                        <li class="col-12 col-md-6">訊息整合中心</li>
-                    </ul>
-                    <a href="https://shopline.tw/social-commerce/features"><span>看更多社群購物功能</span> <i class="icon-arrow-right"> <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#0061FF"><path d="M630-444H192v-72h438L429-717l51-51 288 288-288 288-51-51 201-201Z"/></svg></i></a>
-                </div>
-                <!-- <div class="space"></div> -->
-                <div class="pic col-12 col-md-6">
-                    <img src="imgs-HK/04.webp" alt="">
-                </div>
+            <div class="space"></div>
+            <div class="pic">
+                <img src="imgs-HK/02.webp" alt="">
             </div>
-            <div class="card col-12">
-                <div class="txt col-12 col-md-6">
-                    <h3>OMO 全通路無縫整併<br>
-                        輕鬆管理網店、門市以及其他通路</h3>
-                    <p>不論是網店拓展門市，還是門市想發展網路生意，從商品、庫存、訂單到會員等各項虛實店舖的資料都能完善整併，輕鬆實現全通路會員經營到多店營運。</p>
-                    <ul class="col-12">
-                        <li class="col-12 col-md-6">門市 POS 系統</li>
-                        <li class="col-12 col-md-6">線上買門市取</li>
-                        <li class="col-12 col-md-6">線上線下會員／商品／庫存整合</li>
-                        <li class="col-12 col-md-6">進銷庫存／調撥／多店管理</li>
-                        <li class="col-12 col-md-6">門市快速集客工具</li>
-                        <li class="col-12 col-md-6">Smart OMO 會員導購工具</li>
-                    </ul>
-                    <a href="https://shopline.tw/pos/features#omni-channel"><span>了解更多全通路整合</span> <i class="icon-arrow-right"> <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#0061FF"><path d="M630-444H192v-72h438L429-717l51-51 288 288-288 288-51-51 201-201Z"/></svg></i></a>
-                </div>
-                <!-- <div class="space"></div> -->
-                <div class="pic col-12 col-md-6">
-                    <img src="imgs-HK/05.webp" alt="">
-                </div>
+        </div>
+        <div class="card">
+            <div class="txt">
+                <h3>刺激下單，創造回購<br>
+                    行銷導流、促購模組任你玩</h3>
+                <p>多元優惠活動、會員集客機制、網紅分潤等多種優惠促銷，將電商行銷玩法一網打盡；加上廣告追蹤助你有效優化行銷活動，刺激顧客下單、吸引鐵粉回購！</p>
+                <ul>
+                    <li>推薦活動與分潤</li>
+                    <li>買Ｘ享Ｙ優惠</li>
+                    <li>A+B 優惠活動</li>
+                    <li>會員推薦獎賞</li>
+                    <li>會員分級／點數／購物金</li>
+                    <li>FB／Google／LINE 廣告追蹤</li>
+                </ul>
+                <a href="https://shopline.tw/online-store/features#promotion"><span>看更多優惠模組</span> <i class="icon-arrow-right"> <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#0061FF"><path d="M630-444H192v-72h438L429-717l51-51 288 288-288 288-51-51 201-201Z"/></svg></i></a>
+            </div>
+            <div class="space"></div>
+            <div class="pic">
+                <img src="imgs-HK/03.webp" alt="">
+            </div>
+        </div>
+        <div class="card">
+            <div class="txt">
+                <h3>「社群+電商」輕鬆開賣<br>
+                    打造一致的社群購物體驗</h3>
+                <p>善用社群與顧客頻繁互動，讓你透過社群也能輕鬆開賣！從直播 +1 接單、聊天機器人到各管道的訊息整合，我們都為你準備好了，不放過每個銷售環節，打造全方位的社群購物體驗！</p>
+                <ul>
+                    <li>社群直播購物系統</li>
+                    <li>FB／IG／LINE 直播 +1</li>
+                    <li>FB & IG 貼文 +1</li>
+                    <li>FB／IG／LINE 對話式購物</li>
+                    <li>自訂聊天機器人腳本</li>
+                    <li>訊息整合中心</li>
+                </ul>
+                <a href="https://shopline.tw/social-commerce/features"><span>看更多社群購物功能</span> <i class="icon-arrow-right"> <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#0061FF"><path d="M630-444H192v-72h438L429-717l51-51 288 288-288 288-51-51 201-201Z"/></svg></i></a>
+            </div>
+            <div class="space"></div>
+            <div class="pic">
+                <img src="imgs-HK/04.webp" alt="">
+            </div>
+        </div>
+        <div class="card">
+            <div class="txt">
+                <h3>OMO 全通路無縫整併<br>
+                    輕鬆管理網店、門市以及其他通路</h3>
+                <p>不論是網店拓展門市，還是門市想發展網路生意，從商品、庫存、訂單到會員等各項虛實店舖的資料都能完善整併，輕鬆實現全通路會員經營到多店營運。</p>
+                <ul>
+                    <li>門市 POS 系統</li>
+                    <li>線上買門市取</li>
+                    <li>線上線下會員／商品／庫存整合</li>
+                    <li>進銷庫存／調撥／多店管理</li>
+                    <li>門市快速集客工具</li>
+                    <li>Smart OMO 會員導購工具</li>
+                </ul>
+                <a href="https://shopline.tw/pos/features#omni-channel"><span>了解更多全通路整合</span> <i class="icon-arrow-right"> <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#0061FF"><path d="M630-444H192v-72h438L429-717l51-51 288 288-288 288-51-51 201-201Z"/></svg></i></a>
+            </div>
+            <div class="space"></div>
+            <div class="pic">
+                <img src="imgs-HK/05.webp" alt="">
             </div>
         </div>
     </div>
     <div class="wrap3">
         <h3>更多功能與服務</h3>
-        <div class="item_list">
-           <div class="item col-12 col-md-4">            
+        <div class="item-list">
+           <div class="item">            
             <img src="imgs-HK/asset 0.svg" alt="">
             <h5>強大庫存與訂單系統</h5>
             <P>從商品數量、貨況到訂單付款狀態、物流貨態一目瞭然，提升營運效率超有感。</P>
            </div>
-           <div class="item col-12 col-md-4">
+           <div class="item">
             <img src="imgs-HK/asset 1.svg" alt="">
             <h5>即時化商店業績分析</h5>
             <P>圖表化報表助你一手掌握商店概況，讓數據助攻企業成長，營運策略更有方向。</P>
            </div>
-           <div class="item col-12 col-md-4">
+           <div class="item">
             <img src="imgs-HK/asset 2.svg" alt="">
             <h5>多國語系、幣值切換</h5>
             <P>想做跨境電商也ＯＫ！提供語言、幣別、稅金等進階功能，友善應對海外消費需求。</P>
            </div>
-           <div class="item col-12 col-md-4">
+           <div class="item">
             <img src="imgs-HK/asset 3.svg" alt="">
             <h5>專業顧問線上支援</h5>
             <P>迅速、透明的溝通管道，協助你快速解決從線上到線下、從在地到海外的網店疑難。</P>
            </div>
-           <div class="item col-12 col-md-4">
+           <div class="item">
             <img src="imgs-HK/asset 4.svg" alt="">
             <h5>廣告行銷加值服務</h5>
             <P>由官方認證的專業投手團隊，協助品牌投遞 Facebook、Google、LINE 等廣告。</P>
            </div>
-           <div class="item col-12 col-md-4">
+           <div class="item">
             <img src="imgs-HK/asset 5.svg" alt="">
             <h5>品牌專屬成長社群</h5>
             <P>致力為品牌店家打造能深度交流且互助的生態體系，是拓展人脈、商機的絕佳場域。</P>

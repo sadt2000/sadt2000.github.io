@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style>
+        .container{
+            width: 500px;
+            /* height: 100px; */
+            border: 1px solid #000;
+           text-align: center;
+           display: flex;
+           border-radius: 10px;
+    
+          
+        }
+        .col{
+            display: flex;
+           flex-direction: column;
+        }
+        .card{
+            margin: 10px;
+        }
+        .conbtn,.ansbtn,.reset{
+            display: none;            
+        }
+     .txt{
+        display: flex;
+        flex-direction:column;
+        border: 1px solid #000;
+        width: 200px;
+        /* height: 200px;      */
+        background-color: #142548;
+
+     }
+     .txt span{
+        color: #FFD660
+     }
+     .txt span:nth-child(1){
+        font-size: 80px;
+        letter-spacing: 10px;
+       
+     }
+     .txt span:nth-child(3){
+        font-size: 50px;
+        
+     }
+   
+   
+
+    </style>
+</head>
+<body>
+    
+    <!-- 請輸入數字1~100的數字 -->
+    <div class="container">
+        <div class="col">
+            <div class="card"><label>猜數字</label></div>
+            
+            <div class="card"><input class="guess" disabled></div>
+            <div class="card"><button class="star" onclick="stargame()">開始遊戲</button></div>
+            <div class="card">
+                <button class="conbtn" id="confirm" >確認</button>
+                <button class="ansbtn" id="ans" onclick="ansclick()">看答案</button>
+            </div>
+            <div class="card"><button class="reset" onclick="resetfn()">重新開始</button></div>
+        </div>
+        <div class="col">
+            <div class="card">
+                
+                <div class="txt"><span>????</span><br><span>答案是</span></div>
+            </div>
+        </div>
+    </div>
+
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Launch static backdrop modal
+  </button> -->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">上次的遊戲還沒結束唷!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            是否接續上一次的猜數字
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">否</button>
+          <button type="button" data-bs-dismiss="modal" class="btn btn-primary">是</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script>
+      window.alert = function(name){
+    var iframe = document.createElement("IFRAME");
+    iframe.style.display="none";
+    iframe.setAttribute("src", 'data:text/plain,');
+    document.documentElement.appendChild(iframe);
+    window.frames[0].window.alert(name);
+    iframe.parentNode.removeChild(iframe);
+}
+    //   let getcookie=browser.cookies.get(document.cookie);
+        // console.log(getcookie);
+        let getcookie=document.cookie.split(';')[0].split("=")[1];
+        let getcookiemax;
+        let getcookiemin;
+        let modal=document.getElementById("staticBackdrop");
+        // alert(modal.show());
+
+        let guessnum;
+        let min=1;
+        let max=100;
+        if(getcookie!=null)
+        {          
+            // $("#staticBackdrop").modal("show");
+            $(document).ready(function(){
+             // Show the Modal on load
+            $("#staticBackdrop").modal("show");   
+               getcookiemax=document.cookie.split(';')[1].split("=")[1];
+               getcookiemin=document.cookie.split(';')[2].split("=")[1];
+               if(parseInt(getcookiemax)>parseInt(getcookiemin))
+               {
+                max=getcookiemax;
+                min=getcookiemin; 
+               }
+               else{
+                min=getcookiemax;
+                max=getcookiemin; 
+               }
+            // max=getcookiemax;
+            // min=getcookiemin;
+            });           
+
+            // $("#myModal").modal();
+        //    alert('是否接續上一次的猜數字')
+        }
+        $(".btn-secondary").click(function(){
+            document.cookie=`guessnum=`;
+            document.cookie=`min=`;
+            document.cookie=`max=`;
+        })
+        $(".btn-primary").click(function(){
+            continuegame();
+
+        })
+
+        // let guessnum;
+        // let min;
+        // let max;
+
+        const label=document.querySelector('label');
+        // label.textContent=`請輸入${min}~${max}的數字`;
+
+        const confirmid=document.getElementById("confirm");
+        const ansid=document.getElementById("ans");
+        const stars=document.querySelector(".star");
+        const guess=document.querySelector(".guess");
+        const reset=document.querySelector(".reset");
+        // guess.disabled=true;
+        // stars.addEventListener("click",stargame);
+
+        const text=document.querySelector(".txt");
+          function continuegame(){         
+            guessnum=getcookie;
+            // max=getcookiemax;
+            // min=getcookiemin;            
+            label.textContent=`請輸入${min}~${max}的數字`;  
+           
+            confirmid.style.display="inline-block";  
+            ansid.style.display="inline-block";   
+            stars.style.display="none";
+            // guess.removeAttribute('disabled');
+            guess.disabled=false;
+           
+        }
+
+        function stargame(){         
+            min=1;
+            max=100;
+            label.textContent=`請輸入${min}~${max}的數字`;  
+            function guessrandom(min,max){                
+            return Math.floor(Math.random()*(max-min+1))+min;
+            }
+            guessnum=guessrandom(1,100);   
+            confirmid.style.display="inline-block";  
+            ansid.style.display="inline-block";   
+            stars.style.display="none";
+            // guess.removeAttribute('disabled');
+            guess.disabled=false;
+            document.cookie=`guessnum=${guessnum}`;
+            document.cookie=`max=${max}`;
+            document.cookie=`min=${min}`;          
+        }
+        
+
+        // let reg=new RegExp("^/+?[1-9][0-9]*$");
+        let reg=new RegExp("^(0|[1-9][0-9]*)$");
+        // if(!reg.test(guess.value)){
+        //     alert("請輸入數字");
+        // }
+   
+        
+       confirmid.addEventListener('click',function(){
+         confirm();
+       })
+
+       //判斷正確答案
+       function confirm(){
+        if(!reg.test(guess.value)){
+            alert(`請輸入${min}~${max}的數字`);
+        }
+        else{
+
+        
+         if(guess.value==guessnum)
+         {
+            text.querySelector("span").textContent=`${guessnum}`;
+            alert("太棒了，猜中了");
+            guess.disabled=true;
+            confirmid.style.display="none";  
+            ansid.style.display="none";   
+            reset.style.display='inline-block';
+            document.cookie=`guessnum=`;
+            document.cookie=`min=`;
+            document.cookie=`max=`;
+         }
+         else{
+            errnum();
+         }
+        }
+       } 
+       //猜錯
+       function errnum(){
+        if(parseInt(guess.value)>=parseInt(guessnum) && parseInt(guess.value) < max)
+        {
+            max=parseInt(guess.value);
+        }
+        else if(parseInt(guess.value)<=parseInt(guessnum)&& parseInt(guess.value) > min){
+            min=guess.value;
+        }
+        label.textContent=`請輸入${min}~${max}的數字`
+        document.cookie=`max=${max}`;
+        document.cookie=`min=${min}`;
+        
+        // alert(label.textContent=`請輸入${min}~${max}的數字`);
+       }
+
+       //看答案
+       function ansclick(){
+        text.querySelector("span").textContent=`${guessnum}`;
+        // alert(guessnum);       
+       }
+
+       //重新遊戲
+       function resetfn(){
+        stargame();
+        reset.style.display='none';
+        guess.value=null;
+        text.querySelector("span").textContent="????";
+       }
+
+    //   document.cookie=`guessnum=${guessnum}`;
+       
+    </script>
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

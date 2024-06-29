@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 200px;
+            height: 100px;
+            border: 1px solid #000;
+           text-align: center;
+          
+        }
+        .btn,.ansbtn,.reset{
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <!-- 請輸入數字1~100的數字 -->
+    <div class="container">
+        <label>猜數字</label>
+        <input class="guess" disabled>
+        <button class="star" onclick="stargame()">開始遊戲</button>
+        <button class="btn" id="confirm" >確認</button>
+        <button class="ansbtn" id="ans" onclick="ansclick()">看答案</button>
+        <button class="reset" onclick="resetfn()">重新開始</button>
+    </div>
+
+
+    <script>
+      
+        let guessnum=0;
+        let min=1;
+        let max=100;
+
+        const label=document.querySelector('label');
+        // label.textContent=`請輸入${min}~${max}的數字`;
+
+        const confirmid=document.getElementById("confirm");
+        const ansid=document.getElementById("ans");
+        const stars=document.querySelector(".star");
+        const guess=document.querySelector(".guess");
+        const reset=document.querySelector(".reset");
+        // guess.disabled=true;
+        // stars.addEventListener("click",stargame);
+
+        function stargame(){          
+            label.textContent=`請輸入${min}~${max}的數字`;  
+            function guessrandom(min,max){                
+            return Math.floor(Math.random()*(max-min+1))+min;
+            }
+            guessnum=guessrandom(1,100);   
+            confirmid.style.display="inline-block";  
+            ansid.style.display="inline-block";   
+            stars.style.display="none";
+            // guess.removeAttribute('disabled');
+            guess.disabled=false;
+        }
+        
+
+        // let reg=new RegExp("^/+?[1-9][0-9]*$");
+        let reg=new RegExp("^(0|[1-9][0-9]*)$");
+        // if(!reg.test(guess.value)){
+        //     alert("請輸入數字");
+        // }
+   
+        
+       confirmid.addEventListener('click',function(){
+         confirm();
+       })
+
+       //判斷正確答案
+       function confirm(){
+        if(!reg.test(guess.value)){
+            alert(`請輸入${min}~${max}的數字`);
+        }
+        else{
+
+        
+         if(guess.value==guessnum)
+         {
+            alert("太棒了，猜中了");
+            guess.disabled=true;
+            confirmid.style.display="none";  
+            ansid.style.display="none";   
+            reset.style.display='inline-block';
+         }
+         else{
+            errnum();
+         }
+        }
+       } 
+       //猜錯
+       function errnum(){
+        if(guess.value>=guessnum && guess.value < max)
+        {
+            max=guess.value;
+        }
+        else if(guess.value <=guessnum && guess.value > min){
+            min=guess.value;
+        }
+        label.textContent=`請輸入${min}~${max}的數字`
+        alert(label.textContent=`請輸入${min}~${max}的數字`);
+       }
+
+       //看答案
+       function ansclick(){
+        alert(guessnum);       
+       }
+
+       //重新遊戲
+       function resetfn(){
+        stargame();
+        reset.style.display='none';
+        guess.value=null;
+       }
+
+    </script>
+    
+</body>
+</html>

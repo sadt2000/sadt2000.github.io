@@ -12,15 +12,20 @@
             margin: 0;
             padding: 0;
         }
-        .container{
+        .header,.service{
             /* width: 100%; */
-            line-height: 1.5;
+            /* line-height: 1.5; */
+            max-width: 100%;
         }
         .wrap1{
             background-color: #F7F8F9;
             text-align: center;
             margin-bottom: 64px;
             padding: 64px 0 64px 0;            
+        }
+        .wrap1_list{
+            /* width: 1200px;
+            margin: auto; */
         }
         .wrap1 h2{
             text-align: center;
@@ -35,7 +40,8 @@
             flex-direction: row-reverse;
         }
         .wrap2 .card_list{
-       
+            /* width: 1200px;
+            margin: auto; */
         }
         .wrap2 .card{
             justify-content: center;           
@@ -104,6 +110,7 @@
             background-color: #F7F8F9;
             text-align:center;
             padding: 64px 30px 64px 30px;
+           
             
         }
         .wrap3 h3{
@@ -120,6 +127,8 @@
             flex-wrap: wrap;
             justify-content: center;
             text-align: center;
+            max-width: 1200px;
+            margin: auto;
             
         }
         .item{
@@ -134,12 +143,15 @@
 </head>
 <body>
     
-<div class="container">
-    <div class="wrap1 col-12">        
-         <h2>單一平台就能助你<br>在全通路輕鬆開店創業</h2>
-        
-        <p>從網路商店架站到實體門市管理，只需要一個平台，就能輕鬆實現開店創業，並能同步管理所有銷售管道，SHOPLINE 助你賣得更多、賣得更好！</p>
+<div class="container header">
+    <div class="wrap1 col-12">                
+             <h2>單一平台就能助你<br>在全通路輕鬆開店創業</h2>
+                     
+                     <p>從網路商店架站到實體門市管理，只需要一個平台，就能輕鬆實現開店創業，並能同步管理所有銷售管道，SHOPLINE 助你賣得更多、賣得更好！</p>
+         
     </div>
+</div>
+    <div class="container mid">
     <div class="wrap2">
         <div class="card_list">
             <div class="card col-12">
@@ -244,7 +256,9 @@
             </div>
         </div>
     </div>
-    <div class="wrap3">
+</div>
+<div class="container service">
+    <div class="wrap3 col-12">
         <h3>更多功能與服務</h3>
         <div class="item_list">
            <div class="item col-12 col-md-4">            

@@ -16,7 +16,8 @@ gameMsgToast.addEventListener("hide.bs.toast",()=>{
 })
 const modalBootstrap =new bootstrap.Modal("#end_game_modal");
 const modalend_game_btn =document.querySelector("#end_game_btn");
-
+const inputgroup=document.querySelector(".input-group");
+inputgroup.style.display='none';
 modalend_game_btn.addEventListener("click",function(){
     modalBootstrap.hide();
     initGame();
@@ -32,7 +33,8 @@ function initGame(){
     starBtn.disabled=true;
     restarBtn.disabled=false;
     showAnsBtn.disabled=false;
-
+    guessInput.disabled=false;
+    inputgroup.style.display=null;
 };
 
 function generateAns(){

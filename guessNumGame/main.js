@@ -36,7 +36,6 @@ function initGame(){
     guessInput.disabled=false;
     inputgroup.style.display=null;
 };
-
 function generateAns(){
     const numArr=[0,1,2,3,4,5,6,7,8,9];
     numArr.sort((a,b)=>getRandomArbitrary(-1,1));

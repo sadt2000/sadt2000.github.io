@@ -27,13 +27,13 @@ window.onload = function () {
 //抓取點選的區域 
 const areaname = document.querySelector("#area_name");
 const areaddetail = document.querySelector("#aread_detail");//街道地址
-areaname.addEventListener("click", () => {
+areaname.addEventListener("change", () => {
   const selectedValue = areaname.options[areaname.selectedIndex].textContent; 
   if (selectedValue !== "請先選擇區域") {
     selectarea(selectedValue);
   }
 })
-areaddetail.addEventListener("click", () => {
+areaddetail.addEventListener("change", () => {
   const selecteddetailValue = areaddetail.options[areaddetail.selectedIndex].textContent; 
   if (selecteddetailValue !== "請先選擇地點") {  
     selectareaddetail(selecteddetailValue);

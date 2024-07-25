@@ -692,7 +692,7 @@ colorselect.addEventListener("click", (e) => {
     colorselectchange(targetcol);
     //選到的顏色
     const targetcolor = e.target.dataset.color;
-    console.log(targetcolor);
+
     if(!targetcolor)return;//避免點選到邊邊空白
     imgchang(targetcolor); 
 

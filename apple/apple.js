@@ -686,10 +686,14 @@ typebtntwo.addEventListener("click", () => {
 const colortxtchange = document.querySelector("#color_txt_change");
 colorselect.addEventListener("click", (e) => {         
     //選到的顏色格子
+    
+    if(!e.target.closest(".col"))return;//避免點選到邊邊空白
     const targetcol = e.target.closest(".col").children[0];
     colorselectchange(targetcol);
     //選到的顏色
     const targetcolor = e.target.dataset.color;
+    console.log(targetcolor);
+    if(!targetcolor)return;//避免點選到邊邊空白
     imgchang(targetcolor); 
 
     initcolor = targetcolor;//先選初始顏色
@@ -714,6 +718,7 @@ function typeToCapacity(selectname) {
     })
 }
 capacityselect.addEventListener("click", (e) => {    
+    if(!e.target.closest(".col"))return;//避免點選到邊邊空白
     const targetcol = e.target.closest(".col").children[0];    
     CapacityselectChange(targetcol);
     selectcapacityItem = e.target.dataset.capacity;
@@ -731,7 +736,7 @@ function colorselectchange(targetcol) {
 //顏色選擇 輪播牆 圖片變換
 function imgchang(targetcolor) { 
     const carouse = modal.filter(item => item.type === "image" && item.name === selecttypeItem);
-    const carousecolor = carouse.filter(item => item.color === targetcolor); 
+    const carousecolor = carouse.filter(item => item.color === targetcolor);      
     carouselimg.innerHTML = `<div class="carousel-item active">
                     <img src="${carousecolor[0].img}" class="d-block w-100" alt="...">
                 </div>

@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./apple.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary mb-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Apple Shop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" id="iPhone_15_pro" href="#">iPhone 15 pro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="iPhone_15" href="#">iPhone 15</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled"  aria-disabled="true">iPhone SE</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row mb-3" id="phonetitle">
+            <!-- <div class="col-12"> -->
+            <h1>購買 iPhone 15 pro</h1>
+            <!-- </div> -->
+            <div class="col-12">NT$36,900 起</div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-8">
+                <div id="carouselExampleIndicators" class="carousel slide sticky-top" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner" id="carouselimg">
+                        <div class="carousel-item active">
+                            <img src="./iphone-15-pro-img/iphone-15-pro-1.webp" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./iphone-15-pro-img/iphone-15-pro-2.webp" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./iphone-15-pro-img/iphone-15-pro-3.webp" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="row row-cols-1 gy-3 modal_selection mt-1">
+                    <h2 class="fs-4">機型 <span>哪一款適合你?</span>
+                    </h2>
+                    <div class="col">
+                        <div class="border rounded-3 p-4 d-flex justify-content-between" role="button" id="type_btn_one"
+                            data-value="iphone 15 Pro">
+                            <div class="fs-5">iphone 15 Pro</div>
+                            <div class="fs-6">NT$36,900 起</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="border rounded-3 p-4 d-flex justify-content-between " role="button"
+                            id="type_btn_two" value="iphone 15 Pro Max">
+                            <div class="fs-5">iphone 15 Pro Max</div>
+                            <div class="fs-6">NT$44,900 起</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-cols-1 gy-3 modal_selection mt-1">
+                    <h2 class="fs-4">外觀 <span>挑選你喜歡的外觀。</span>
+                    </h2>
+                    <div class="fs-6 font-weight-bold" id="color_txt_change">顏色 - 黑色鈦金屬</div>
+                    <div class="row gy-3" id="color_select">
+                        <div class="col">
+                            <div class="border rounded-3 p-1 text-center" role="button">
+                                <img class="w-100" src="./iphone-15-pro-img/iphone-pro-color-1.jfif" alt="">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="border rounded-3 p-1 text-center" role="button">
+                                <img class="w-100" src="./iphone-15-pro-img/iphone-pro-color-2.jfif" alt="">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="border rounded-3 p-1 text-center" role="button">
+                                <img class="w-100" src="./iphone-15-pro-img/iphone-pro-color-3.jfif" alt="">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="border rounded-3 p-1 text-center" role="button">
+                                <img class="w-100" src="./iphone-15-pro-img/iphone-pro-color-4.jfif" alt="">
+                            </div>
+                                         
+                    </div>
+                </div>
+                <div class="row row-cols-1 gy-3 modal_selection mt-1">
+                    <h2 class="fs-4">儲存裝置 <span>你需要多少儲存空間?</span>
+                    </h2>
+                    <div id="capacity_select">
+                        <div class="col">
+                            <div class="border rounded-3 p-4 d-flex justify-content-between " role="button">
+                                <div class="fs-5">128GB</div>
+                                <div class="fs-6">NT$36,900 起</div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="border rounded-3 p-4 d-flex justify-content-between " role="button">
+                                <div class="fs-5">256GB</div>
+                                <div class="fs-6">NT$40,400 起</div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="border rounded-3 p-4 d-flex justify-content-between " role="button">
+                                <div class="fs-5">512GB</div>
+                                <div class="fs-6">NT$47,400 起</div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="border rounded-3 p-4 d-flex justify-content-between " role="button">
+                                <div class="fs-5">1TB</div>
+                                <div class="fs-6">NT$54,400 起</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="detail mt-5 mb-5">
+        <div class="container">
+            <div class="row pt-5">
+                <div class="col-12 col-md-4" id="detail_title">
+                    <h2 class="fs-1 fw-bold">你的全新 <br>iPhone 15 Pro。</h2>
+                    <div class="fs-1 fw-bold">依你的需求量身打造。</div>
+                    <div><img class="w-100" src="./iphone-15-pro-img/iphone-15-pro-3.webp" alt=""></div>
+                </div>
+                <div class="col-12 col-md-5">
+                    <div class="fs-4 fw-bold mt-3 pb-5" id="detail_type">
+                        <div>iPhone 15 Pro 1TB 原色鈦金屬</div>
+                        <div>NT$54,400</div>
+                    </div>
+                    <div class="fs-5 pt-3 pb-3 border-top border-bottom">
+                        <span class="fw-bold">需要一點時間嗎？</span>
+                        <div>將這部裝置收藏到「你的收藏」，即可保留你選擇的所有配置，你可以隨時從上次離開處接續進行。</div>
+                    </div>
+                    <div class="fs-5 pt-3 pb-3">
+                        你所在地區的運送詳細資訊將在「結帳」顯示。
+                    </div>
+                </div>
+                <div class="col-12 col-md-3 fs-5">
+                    <div>立即訂購。店內取貨：</div>
+                    <div>今天，地點：Apple 台北 101</div>
+                    <div><a href="">查看其他直營店</a></div>
+                    <button class="btn btn-primary mt-5 w-75">加入購物袋</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="accordion accordion-flush" id="accordionFlush">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fs-1" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        常見問題
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+                    <div class="accordion-body">
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed fs-5" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                                        aria-expanded="false" aria-controls="flush-collapseOne">
+                                        為什麼要在 apple.com 購買不含 SIM 卡的 iPhone？
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse fs-6"
+                                    data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">自 apple.com 購買的未連接電信業者網路方案的 iPhone
+                                        都已解鎖，因此你不必受限於單一網路供應商或多年的服務合約。你可以選擇適合自己的網路及資費方案。你的全新 iPhone
+                                        啟用後會保持解鎖狀態，這表示你可以使用任何為 iPhone 提供服務的網路。</div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed fs-5" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
+                                        aria-expanded="false" aria-controls="flush-collapseTwo">
+                                        哪些電信業者提供 5G 服務？
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseTwo" class="accordion-collapse collapse fs-6"
+                                    data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">iPhone 15 Pro、iPhone 15、iPhone 14、iPhone 13、以及 iPhone SE
+                                        均支援 5G。要連接 5G，須透過提供 5G 服務的網路供應商來啟用你的 iPhone。部分供應商可能要求使用 5G 服務方案或新的 SIM
+                                        卡。請洽詢你的供應商，以取得進一步資訊。 請在這裡(以新視窗開啟)進一步了解你所在國家或地區的網路供應商。</div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed fs-5" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
+                                        aria-expanded="false" aria-controls="flush-collapseThree">
+                                        我的 iPhone 在全世界都能使用嗎？
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseThree" class="accordion-collapse collapse fs-6"
+                                    data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <p>所有 iPhone 機型均是全球通用的手機，讓你幾乎可在任何地方使用。你可以在全球超過 200 個國家或地區透過 GSM
+                                            網路進行國際漫遊。如果你透過無線電信業者分期付款購買 iPhone，請聯絡他們以確認你是否可進行國際漫遊。</p>
+                                        <p>
+                                            5G 與 LTE 數據服務的供應狀況視國家或地區而異，並視電信業者支援的特定 5G 與 LTE
+                                            無線電頻率而定。請洽詢你的電信業者，進一步了解國際漫遊注意事項與資費說明。
+                                        </p>
+                                        <p><a href="https://www.apple.com/tw/iphone/LTE" data-slot-name="faqSection"
+                                                data-feature-name="Astro Link"
+                                                data-display-name="AOS: iphone/LTE">按電信業者與國家或地區查看 iPhone 對 5G 與 LTE
+                                                網路的支援情況<span class="a11y"> (以新視窗開啟)</span></a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed fs-5" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
+                                        aria-expanded="false" aria-controls="flush-collapseThree">
+                                        移轉資料和設定我的新 iPhone 容易嗎？
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseThree" class="accordion-collapse collapse fs-6"
+                                    data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <p>容易，iCloud 能把你的各種設定、照片、app 及文件，順暢無縫地移轉到新裝置。只要在設定新裝置時登入iCloud，存取上一部裝置的 iCloud
+                                            備份，幾分鐘即可設定完成。</p>
+
+                                        <p>沒有足夠的 iCloud 儲存空間以完成備份？iCloud 會提供足夠的暫時儲存空間，以確保你能備份裝置，並移轉你所有的資料，不須付費 (須使用iOS
+                                            15)。</p>
+                                        <p>
+                                            透過「快速開始」，你可從 iCloud 備份將資料與內容回復到新的 iPhone。針對搭載 iOS 12.4
+                                            或以上版本的手機，「快速開始」提供裝置對裝置的移轉選項，讓你以無線方式將所有資料從現有裝置移轉到新裝置。
+                                        </p>
+
+                                        <p>如果你是從 Android 裝置轉用 iPhone，須先下載「移轉到 iOS」app，再依照新 iPhone 上的設定步驟進行。</p>
+
+                                        <p>若要了解如何將資料移轉到你的新 iPhone，請參閱
+                                            <a href="https://www.apple.com/tw/iphone/LTE" data-slot-name="faqSection"
+                                                data-feature-name="Astro Link"
+                                                data-display-name="AOS: iphone/LTE">按電信業者與國家或地區查看 iPhone 對 5G 與 LTE
+                                                網路的支援情況<span class="a11y"> (以新視窗開啟)</span></a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed fs-5" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
+                                        aria-expanded="false" aria-controls="flush-collapseThree">
+                                        我可以將 iPhone 退貨嗎？
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseThree" class="accordion-collapse collapse fs-6"
+                                    data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <p>
+                                            可以。如果你改變心意，不想再保留 iPhone，可以選擇退貨給我們。iPhone
+                                            退回時必須狀況良好，置於原始包裝內，原始包裝須包含所有配件、使用手冊和說明。退貨須遵守 Apple 的銷售及退款政策。
+                                        </p>
+                                        <p><a href="/tw/shop/help/returns_refund" data-slot-name="faqSection"
+                                                data-feature-name="Astro Link"
+                                                data-display-name="AOS: help/returns_refund" class="more"
+                                                target="_blank">進一步了解退貨、退款與換貨<span class="a11y"> (以新視窗開啟)</span></a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <footer>
+        <div class="container fs-6 p-4 mt-3">
+            <span>價格皆含稅與運送費用。</span>
+            <p>* 上述費用為近似值，可能會隨時間變動。</p>
+            <p>** 折抵換購服務由 Apple
+                的換購服務合作夥伴提供。折抵金額報價僅為預估價，實際折抵換購價值可能低於估價。實際換購估價視你折抵換購裝置的狀況、推出年份與機型而有所差異。並非所有裝置均符合折抵條件。你必須已達法定成年年齡，才有折抵換購的資格，以獲享折抵優惠或取得
+                Apple Store 禮品卡。你現有裝置的價值，可能適用於購買新 Apple
+                裝置。實際獲得的換購價值，是根據收到符合條件的裝置，是否吻合你在估價時所提供的描述而定。可能須按照新裝置的全額售價繳納加值型營業稅。店內換購須出示政府核發的有效照片證件，才能享有此項優惠
+                (當地法律可能要求保存這份資訊)。優惠可能無法在所有直營店提供，線上和店內折抵換購的估價可能會有所不同。部分直營店可能會有額外的要求。Apple 直營店不提供電腦換購。Apple
+                的換購服務合作夥伴保留以任何理由拒絕、取消任何折抵換購交易，或限制接受任何裝置 (及其數量) 參與本優惠的權利。更多詳情可自 Apple 的換購服務合作夥伴取得，以了解符合換購及回收條件的裝置。須遵守
+                Apple 的換購服務合作夥伴所訂立的其他條款。</p>
+            <p>°° Apple TV+ 優惠僅適用於新訂戶和符合資格的重新訂閱用戶。免費試用結束後，每月 NT$250。每個 Apple ID
+                僅可獲享一次優惠，如果你是「家人共享」群組的成員，不論你或家人購買多少部裝置，每個家庭僅可獲享一次優惠。如果你或你的家人之前已接受 Apple TV+
+                三個月或一年免費訂閱服務優惠，則不再適用此優惠。優惠在符合條件裝置啟用後的 3 個月內有效。訂閱方案將自動續訂直到取消為止。須受限制與其他
+                <a href="https://www.apple.com/tw/promo" data-slot-name="footnotesText" data-feature-name="Astro Link"
+                    data-display-name="AOS: promo">條款</a>約束。
+                <br>
+                <br>
+                僅適用於新訂戶。試用結束後，每月 NT$165。優惠限時提供，僅適用於擁有符合條件新裝置的 Apple Music 新訂戶。符合條件的音訊裝置兌換優惠，須使用連接或配對執行最新 iOS 或 iPadOS 的
+                Apple 裝置。Apple Watch 兌換優惠，須使用連接或配對執行最新 iOS 的 iPhone。優惠在符合條件裝置啟用後的三個月內有效。不論購買多少部符合條件的裝置，每個 Apple ID
+                僅可獲享一次優惠。訂閱方案將自動續訂直到取消為止。須受限制與其他
+                <a href="https://www.apple.com/tw/promo" data-slot-name="footnotesText" data-feature-name="Astro Link"
+                    data-display-name="AOS: promo">條款</a>約束。
+                <br>
+                <br>
+
+                Apple Arcade 優惠僅適用於新訂戶和符合資格的重新訂閱用戶。免費試用結束後，每月 NT$220。每個 Apple ID
+                僅可獲享一次優惠，如果你是「家人共享」群組的成員，不論你或家人購買多少部裝置，每個家庭僅可獲享一次優惠。如果你或你的家人之前已接受 Apple Arcade
+                三個月免費訂閱服務優惠，則不再適用此優惠。優惠在符合條件裝置啟用後的 3 個月內有效。訂閱方案將自動續訂直到取消為止。須受限制與其他
+                <a href="https://www.apple.com/tw/promo" data-slot-name="footnotesText" data-feature-name="Astro Link"
+                    data-display-name="AOS: promo">條款</a>約束。
+            </p>
+            <ol>
+                <li>顯示器的圓角具有優美的曲線設計，並呈現在一個標準矩形之內。以標準矩形量測時，螢幕的對角線長度為 6.06 吋 (iPhone 14、iPhone 13)、6.12 吋 (iPhone
+                    15、iPhone 15 Pro)、6.68 吋 (iPhone 14 Plus) 或 6.69 吋 (iPhone 15 Plus、iPhone 15 Pro Max)。實際可視區較小。</li>
+                <li>可用儲存空間會隨著眾多因素而減少並有所差異。標準配置會使用約 12GB 至 17GB 的空間，包括 iOS 17 與其最新功能，以及可刪除的各款 Apple app。可刪除的各款 Apple app
+                    約會佔用 4.5GB 的空間，你可隨時從 App Store 再次下載這些 app。儲存容量會隨軟體版本、設定與 iPhone 機型而有所變動。</li>
+                <li> iPhone 14、iPhone 14 Pro、iPhone 15 與 iPhone 15 Pro 系列機型能偵測嚴重車禍，並為你撥打求救電話。須透過行動網路連線或 Wi-Fi 通話使用。</li>
+                <li>電池使用時間聲明適用於較大尺寸機型。所列舉的電池效能因受網路配置與許多其他因素影響；實際結果可能有所差異。電池的充電循環次數有限，最終仍可能須要更換。電池使用時間與充電次數視使用情況及設定狀態而異。請參閱<a
+                        href="https://www.apple.com/tw/batteries" data-slot-name="footnotesText"
+                        data-feature-name="Astro Link" data-display-name="AOS: batteries"
+                        target="blank">apple.com/<span>tw</span>/batteries</a>與<a
+                        href="https://www.apple.com/tw/iphone/battery.html" data-slot-name="footnotesText"
+                        data-feature-name="Astro Link" data-display-name="AOS: iphone/battery.html"
+                        target="blank">apple.com/<span>tw</span>/iphone/battery.html</a>，以取得進一步資訊。</li>
+                <li>所列舉的電池效能因受網路配置與許多其他因素影響；實際結果可能有所差異。電池的充電循環次數有限，最終仍可能須要更換。電池使用時間與充電次數視使用情況及設定狀態而異。請參閱<a
+                        href="https://www.apple.com/tw/batteries" data-slot-name="footnotesText"
+                        data-feature-name="Astro Link" data-display-name="AOS: batteries"
+                        target="blank">apple.com/<span>tw</span>/batteries</a>與<a
+                        href="https://www.apple.com/tw/iphone/battery.html" data-slot-name="footnotesText"
+                        data-feature-name="Astro Link" data-display-name="AOS: iphone/battery.html"
+                        target="blank">apple.com/<span>tw</span>/iphone/battery.html</a>，以取得進一步資訊。</li>
+                <li>須使用速度達 10Gb/s 的 USB 3 連接線。</li>
+            </ol>
+            <p>我們會透過你的網際網路 IP 位址所對應的地理區域，或你上次瀏覽 Apple 網站輸入的位置資訊，估計你的約略位置。</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="./apple.js"></script>    
+</body>
+
+</html>

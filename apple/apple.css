@@ -1,0 +1,12 @@
+.modal_selection{
+    font-size: 24px;
+}
+.modal_selection span{
+    color: #86868B;    
+}
+footer,.detail{
+    background-color: #f5f5f5;
+}
+.accordion-button:not(.collapsed){
+    background-color:#ffffff;
+}
